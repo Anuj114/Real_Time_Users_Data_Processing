@@ -1,6 +1,6 @@
 from datetime import datetime
 from airflow import DAG
-from airflow.providers.standard.operators.python import PythonOperator
+from airflow.operators.python import PythonOperator
 import requests
 from kafka import KafkaProducer
 import time
@@ -26,7 +26,7 @@ def format_data(resp):
     data['last_name'] = resp['name']['last']
     data['gender'] = resp['gender']
     data['address'] = f"{str(location['street']['number'])} {location['street']['name']}" \
-                    f'{location['city']}, {location['state']}, {location['country']}'
+                    f"{location['city']}, {location['state']}, {location['country']}"
     data['postcode'] = location['postcode']
     data['email'] = resp['email']
     data['username'] = resp['login']['username']

@@ -1,0 +1,6 @@
+pandas
+numpy
+pyspark
+kafka-python
+psycopg2-binary
+apache-airflow-providers-postgres
